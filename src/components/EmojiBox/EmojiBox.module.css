@@ -12,6 +12,7 @@
   min-height: 100px;
   min-width: 100px;
   transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  cursor: pointer;
 }
 
 .selected {
