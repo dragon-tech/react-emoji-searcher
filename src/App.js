@@ -21,10 +21,6 @@ function App() {
 
     fetchemojis()
   }, [])
-
-  console.log('loading ? ', loading);
-  console.log('error ? ', error);
-  console.log('emojis data ? ', emojisData);
   return (
     <div>
       <h1>Hello, world!</h1>
