@@ -10,6 +10,7 @@ function App() {
   const [emojisData, setEmojisData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [searchText, setSearchText] = useState("");
   useEffect(() => {
     async function fetchemojis() {
       setLoading(true);
@@ -28,14 +29,20 @@ function App() {
 
     fetchemojis();
   }, []);
+
+  const handleSearchEmojis = (event) => {
+    setSearchText(event.target.value);
+  };
   return (
     <>
       <Navbar />
-      <Input />
       <Container>
+        <Input onChange={handleSearchEmojis} value={searchText} />
         {loading && <Empty text="Loading...." />}
         {error && <Empty text="Oops...." />}
-        {emojisData.length > 0 && <Emojis emojisData={emojisData} />}
+        {emojisData.length > 0 && (
+          <Emojis emojisData={emojisData} searchText={searchText} />
+        )}
       </Container>
     </>
   );

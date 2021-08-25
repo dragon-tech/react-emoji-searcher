@@ -8,7 +8,7 @@ export const filterEmojis = ({
       return true;
     }
 
-    if (emoji.keyword.includes(searchText.toLowerCase())) {
+    if (emoji.keywords.includes(searchText.toLowerCase())) {
       return true;
     }
 
